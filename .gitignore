@@ -1,0 +1,20 @@
+.DS_Store
+*.swp
+*.swo
+.vscode/
+.idea/
+node_modules/
+__pycache__/
+*.pyc
+
+# Local-only scratch
+scratch/
+*.local.md
+
+# Run + feedback capture: contents stay local because this repo is public
+# and individual run/feedback files may contain work-specific context.
+# The directories themselves are tracked via .gitkeep.
+runs/*
+!runs/.gitkeep
+feedback/*
+!feedback/.gitkeep
