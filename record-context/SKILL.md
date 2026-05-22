@@ -1,6 +1,6 @@
 ---
 name: record-context
-description: Use proactively whenever the user shares a fact, preference, constraint, or correction about themselves, their work, their projects, or how they want me to behave that is worth keeping for future conversations. Writes structured entries to ~/.context/ and commits to git. Also use when the user explicitly says "remember", "save this", "note that", or "/record-context".
+description: Use proactively whenever the user shares a fact, preference, constraint, or correction about themselves, their work, their projects, or how they want me to behave that is worth keeping for future conversations. Writes structured entries to ~/.context/, commits them to git, and pushes them to the configured remote. Also use when the user explicitly says "remember", "save this", "note that", or "/record-context".
 ---
 
 # record-context
@@ -44,10 +44,11 @@ Skip:
    **How to apply:** <when this kicks in>
    ```
 5. **Update `MEMORY.md`** with a one-line index entry if you create a new file.
-6. **Commit:**
+6. **Commit and push every update:**
    ```bash
    cd ~/.context && git add -A && git commit -m "record: <short summary>" && git push
    ```
+   Pushing is required for every context update. After pushing, verify `git status --short --branch` shows the local branch is not ahead of the remote, or report the push failure explicitly.
 
 ## What NOT to save
 
